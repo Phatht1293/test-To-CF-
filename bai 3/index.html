@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+
+        <div id="container">
+            <h3>Link Shortener</h3>
+            <div>
+                <label for="">Enter a link:</label>
+                <input type="text">
+                <button>➝</button>
+            </div>
+            <div>
+                <label for="">Short domain:</label>
+                <button>shrtco.de</button>
+                <button>9qr.de</button>
+                <button>shiny.link</button>
+            </div>
+            <p>With this free Link Shortener you can make Links shorter and easier to remember.</p>
+        </div>
+    </div>
+
+    <script type=”text/javascript” charset=”utf-8″ src=”https://api.shrtco.de/v2/></script>
+        <script type=”text/javascript” charset=”utf-8″>
+            shrtcode.addPageLoadEvent(function(){
+                shrtcode.myShortenCallback = function(data) {
+            var result;
+            for (var r in data.results) {
+            result = data.results[r];
+            result['longUrl'] = r;
+            break;
+}
+document.getElementById(“shorturl”).innerHTML =  result['shortUrl'] 
+shrtcode.shorten(document.location, ‘shrtcode.myShortenCallback’);
+});
+</script>
+</body>
+</html>
